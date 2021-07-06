@@ -8,6 +8,15 @@ import { User } from './user.entity';
 export class UserService {
     constructor(@InjectRepository(User) private userRepository:Repository<User>) {}
     async create(user: CreateUserDto): Promise<UserDto> {
-        return this.userRepository.create(user);
+        return this.userRepository.save(user);
+    }
+    findOne(id: number) {
+        return this.userRepository.findOne(id);
+    }
+    async update(user: UserDto): Promise<UserDto> {
+        return this.userRepository.save(user);
+    }
+    deleteOne(id: number) {
+        return this.userRepository.delete(id);
     }
 }

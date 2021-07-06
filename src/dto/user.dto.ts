@@ -7,4 +7,5 @@ export class UserDto {
     lastName: string;
 
     username: string;
+    password?: string;
 }

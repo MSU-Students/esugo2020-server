@@ -8,6 +8,7 @@ import { UserService } from './user/user.service';
 
 @Module({
   imports: [
+    TypeOrmModule.forFeature([User]),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
